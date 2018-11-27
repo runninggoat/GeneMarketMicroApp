@@ -1,0 +1,13 @@
+.product {
+  display: block;
+  margin-bottom: 42rpx;
+  border-radius: 33rpx;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  box-shadow:0 4rpx 20rpx 0;
+}
+
+.product text {
+  display: block;
+  margin: 12rpx 40rpx 18rpx 42rpx;
+}

@@ -1,0 +1,34 @@
+/**index.wxss**/
+@import "../../templates/product.wxss";
+.body {
+  display: block;
+  height: 100%;
+  padding: 42rpx;
+  background-color: #EDEDED;
+}
+
+.title {
+  display: block;
+  margin-bottom: 42rpx;
+  font-size: 50rpx;
+}
+
+.navitab {
+  position: fixed;
+  bottom: 1rpx;
+  height: 136rpx;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.tab1 {
+  float: left;
+  margin: 15rpx 0 0 180rpx;
+  text-align: center;
+}
+
+.tab2 {
+  float: right;
+  margin: 15rpx 180rpx 0 0;
+  text-align: center;
+}

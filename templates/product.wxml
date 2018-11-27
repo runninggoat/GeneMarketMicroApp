@@ -1,0 +1,10 @@
+<template name="productCover">
+  <view class='product'>
+    <image
+      src='{{imgsrc}}'
+      mode='widthFix'
+      lazy-load='true'
+    ></image>
+    <text>{{title}}</text>
+  </view>
+</template>

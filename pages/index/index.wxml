@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<import src='../../templates/product.wxml' />
+<view class='body'>
+  <text class='title'>基因产品商城</text>
+  <view
+    wx:for='{{products}}'
+    wx:key='item.id'
+    wx:for-item='item'
+  >
+    <view data-idx='{{item.id}}' bindtap='onClickItem'>
+      <template
+        is='productCover'
+        data='{{imgsrc: item.imgsrc, title: item.title}}'
+      ></template>
+    </view>
+  </view>
+  <view style='height: 100rpx;'></view>
+</view>
+<view class='navitab'>
+  <view class='tab1' style='color: {{active === 1 ? "#3B200C" : "#EDEDED"}};'>
+    <view>
+      <text class='iconfont icon-shouyefill'></text>
+    </view>
+    <view>
+      <text>首页</text>
+    </view>
+  </view>
+  <view class='tab2' style='color: {{active === 2 ? "#3B200C" : "#EDEDED"}};'>
+    <view>
+      <text class='iconfont icon-gerenfill'></text>
+    </view>
+    <view>
+      <text>我的</text>
+    </view>
+  </view>
+</view>

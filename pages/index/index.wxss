@@ -4,13 +4,44 @@
   display: block;
   height: 100%;
   padding: 42rpx;
-  background-color: #EDEDED;
 }
 
 .title {
   display: block;
   margin-bottom: 42rpx;
   font-size: 50rpx;
+}
+
+.info-bar {
+  width: 100%;
+}
+
+.nickname {
+  float: left;
+  font-size: 50rpx;
+  line-height: 100rpx;
+}
+
+.avatar {
+  float: right;
+  border-radius: 50%;
+  width: 100rpx;
+}
+
+.feature {
+  padding: 33rpx 0;
+  border-top:1px solid #EDEDED;
+  border-bottom:1px solid #EDEDED;
+}
+
+.feature > .iconfont {
+  font-size: 50rpx;
+}
+
+.feature > .text {
+  margin: 0 0 0 30rpx;
+  font-size: 33rpx;
+  line-height: 50rpx;
 }
 
 .navitab {

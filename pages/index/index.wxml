@@ -1,23 +1,67 @@
 <!--index.wxml-->
 <import src='../../templates/product.wxml' />
-<view class='body'>
-  <text class='title'>基因产品商城</text>
-  <view
-    wx:for='{{products}}'
-    wx:key='item.id'
-    wx:for-item='item'
-  >
-    <view data-idx='{{item.id}}' bindtap='onClickItem'>
-      <template
-        is='productCover'
-        data='{{imgsrc: item.imgsrc, title: item.title}}'
-      ></template>
-    </view>
+
+<!--商城首页-->
+<block wx:if='{{active === "1"}}'>
+  <view class='body' style='background-color: #EDEDED;'>
+      <text class='title'>基因产品商城</text>
+      <block
+        wx:for='{{products}}'
+        wx:key='item.id'
+        wx:for-item='item'
+      >
+        <view data-idx='{{item.id}}' bindtap='onClickItem'>
+          <template
+            is='productCover'
+            data='{{imgsrc: item.imgsrc, title: item.title}}'
+          ></template>
+        </view>
+      </block>
+    <view style='height: 100rpx;'></view>
   </view>
-  <view style='height: 100rpx;'></view>
-</view>
+</block>
+
+<!--我的页面-->
+<block wx:elif='{{active === "2"}}'>
+  <view class='body' style='background-color: #FFFFFF;'>
+    <!--昵称和头像-->
+    <view class='info-bar' style='margin-bottom: 30rpx;'>
+      <text class='nickname'>{{nickname}}</text>
+      <image
+        class='avatar'
+        src='{{avatar}}'
+        mode='widthFix'
+      ></image>
+      <view style='clear: both;'></view>
+    </view>
+
+    <!--功能列表-->
+    <block
+      wx:for='{{features}}'
+      wx:for-index='idx'
+      wx:for-item='feature'
+      wx:key='{{feature.text}}'
+    >
+      <view class='feature'>
+        <text class='iconfont {{feature.icon}}'></text>
+        <text class='text'>{{feature.text}}</text>
+        <text
+          class='iconfont icon-xiayibu'
+          style='float: right;'
+        ></text>
+      </view>
+    </block>
+  </view>
+</block>
+
+<!-- navigation tab bar -->
 <view class='navitab'>
-  <view class='tab1' style='color: {{active === 1 ? "#3B200C" : "#EDEDED"}};'>
+  <view
+    class='tab1'
+    style='color: {{active === "1" ? "#3B200C" : "#EDEDED"}};'
+    data-tab='1'
+    bindtap='onClickTab'
+  >
     <view>
       <text class='iconfont icon-shouyefill'></text>
     </view>
@@ -25,7 +69,12 @@
       <text>首页</text>
     </view>
   </view>
-  <view class='tab2' style='color: {{active === 2 ? "#3B200C" : "#EDEDED"}};'>
+  <view
+    class='tab2'
+    style='color: {{active === "2" ? "#3B200C" : "#EDEDED"}};'
+    data-tab='2'
+    bindtap='onClickTab'
+  >
     <view>
       <text class='iconfont icon-gerenfill'></text>
     </view>

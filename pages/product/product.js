@@ -5,14 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    images: [
+      '../../images/1.jpg',
+      '../../images/2.jpg',
+      '../../images/3.jpg',
+      '../../images/4.jpg',
+    ],
+    title: '',
+    price: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    wx.setNavigationBarTitle({
+      title: options.title,
+    })
+    this.setData({
+      title: options.title,
+      price: options.price,
+    })
   },
 
   /**

@@ -7,10 +7,10 @@
       <text class='title'>基因产品商城</text>
       <block
         wx:for='{{products}}'
-        wx:key='item.id'
+        wx:key='item.title'
         wx:for-item='item'
       >
-        <view data-idx='{{item.id}}' bindtap='onClickItem'>
+        <view data-product='{{item}}' bindtap='onClickItem'>
           <template
             is='productCover'
             data='{{imgsrc: item.imgsrc, title: item.title}}'

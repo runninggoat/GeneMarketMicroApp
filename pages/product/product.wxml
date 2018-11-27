@@ -1,2 +1,39 @@
 <!--pages/product.wxml-->
-<text>pages/product.wxml</text>
+<!--商品详细信息-->
+<view>
+  <block
+    wx:for='{{images}}'
+    wx:for-item='img'
+    wx:key='{{img}}'
+  >
+    <image
+      src='{{img}}'
+      mode='widthFix'
+      style='width: 100%;'
+    ></image>
+  </block>
+  <view style='height: 130rpx;'></view>
+</view>
+
+<!--固定的报告样例入口按钮-->
+<view class='example-btn'>
+  <text>查看报告示例</text>
+</view>
+
+<!--固定的定价购买信息-->
+<view class='price-bar'>
+  <view class='contact'>
+    <view>
+      <text class='iconfont icon-gerenfill'></text>
+    </view>
+    <view>
+      <text>客服</text>
+    </view>
+  </view>
+  <view class='price'>
+    <text>￥{{price}}</text>
+  </view>
+  <view class='buy-btn'>
+    <text>立即购买</text>
+  </view>
+</view>

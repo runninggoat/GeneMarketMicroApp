@@ -47,7 +47,7 @@
 .navitab {
   position: fixed;
   bottom: 1rpx;
-  height: 136rpx;
+  height: 140rpx;
   width: 100%;
   background-color: #FFFFFF;
 }

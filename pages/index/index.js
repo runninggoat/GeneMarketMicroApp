@@ -7,17 +7,27 @@ Page({
     //商城首页的数据
     products: [
       {
-        id: 0,
         imgsrc: '../../images/product1.jpg',
         title: '数字生命包',
+        price: 599,
       },
       {
-        id: 1,
         imgsrc: '../../images/product2.jpg',
         title: '精准护肤套餐',
+        price: 1099,
+      },
+      {
+        imgsrc: '../../images/product3.jpg',
+        title: '易感疾病基因检测',
+        price: 1599,
+      },
+      {
+        imgsrc: '../../images/product4.jpg',
+        title: '祖先溯源套餐',
+        price: 499,
       },
     ],
-    active: '2',
+    active: '1',
     windowHeight: 0,
     windowWidth: 0,
 
@@ -63,9 +73,9 @@ Page({
   },
 
   onClickItem: function (e) {
-    let idx = e.currentTarget.dataset.idx
+    let product = e.currentTarget.dataset.product
     wx.navigateTo({
-      url: `../product/product?id=${idx}`,
+      url: `../product/product?title=${product.title}&price=${product.price}`,
     })
   },
 

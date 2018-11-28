@@ -21,11 +21,6 @@ Page({
         title: '易感疾病基因检测',
         price: 1599,
       },
-      {
-        imgsrc: '../../images/product4.jpg',
-        title: '祖先溯源套餐',
-        price: 499,
-      },
     ],
     active: '1',
 

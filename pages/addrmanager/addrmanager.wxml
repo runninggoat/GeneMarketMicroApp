@@ -22,10 +22,19 @@
       </view>
       <view class='location'>配送地址：{{addresses[idx].location}}</view>
       <view class='operations'>
-        <view class='operation edit'>
+        <view
+          class='operation edit'
+          data-idx='{{idx}}'
+          data-type='edit'
+          catchtap='editAddress'
+        >
           <text>编辑</text>
         </view>
-        <view class='operation delete' catchtap='deleteAddr'>
+        <view
+          class='operation delete'
+          data-idx='{{idx}}'
+          catchtap='deleteAddr'
+        >
           <text>删除</text>
         </view>
       </view>
@@ -34,7 +43,11 @@
       </block>
     </view>
   </block>
-  <view class='add-addr'>
+  <view
+    class='add-addr'
+    data-type='add'
+    catchtap='editAddress'
+  >
     <text class='iconfont icon-zengjia icon'></text>
     <text class='text'>添加地址</text>
   </view>

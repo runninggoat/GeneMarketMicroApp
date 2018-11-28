@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/product/product",
     "pages/purchase/purchase",
-    "pages/addrmanager/addrmanager"
+    "pages/addrmanager/addrmanager",
+    "pages/addrmanager/addreditor"
   ],
   "window": {
     "backgroundTextStyle": "light",

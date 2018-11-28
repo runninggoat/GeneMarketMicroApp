@@ -1,0 +1,33 @@
+/* pages/addrmanager/addreditor.wxss */
+
+.body {
+  padding-top: 1rpx;
+  background: #ededed;
+}
+
+.location-editor, .name-editor, .phone-editor {
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.location-editor > textarea {
+  margin-top: 10rpx;
+  border: 1rpx solid #8D9DA6;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  width:auto;
+  height:150rpx;
+  word-break:break-all;
+}
+
+.name-editor > input, .phone-editor > input {
+  margin-top: 10rpx;
+  border: 1rpx solid #8D9DA6;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.save {
+  padding: 0 30rpx;
+}

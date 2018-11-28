@@ -98,7 +98,7 @@ Page({
       })
       return
     }
-    let idx = e.currentTarget.dataset.idx
+    let idx = parseInt(e.currentTarget.dataset.idx)
     let newIdx = 0
     if (idx > 1) {
       newIdx = idx - 1
@@ -111,5 +111,19 @@ Page({
     })
     app.globalData.addridx = newIdx
     app.globalData.addresses = newAddresses
-  }
+  },
+
+  editAddress: function (e) {
+    let type = e.currentTarget.dataset.type
+    if (type === 'add') {
+      wx.navigateTo({
+        url: `addreditor?type=${type}`,
+      })
+    } else if (type === 'edit') {
+      let idx = e.currentTarget.dataset.idx
+      wx.navigateTo({
+        url: `addreditor?type=${type}&addridx=${idx}`,
+      })
+    }
+  },
 })

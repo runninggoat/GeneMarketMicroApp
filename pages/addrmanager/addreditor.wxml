@@ -1,0 +1,37 @@
+<!--pages/addrmanager/addreditor.wxml-->
+<view class='body' style='height: {{windowHeight}}px'>
+  <view class='location-editor'>
+    <text>配送地址</text>
+    <text style='font-size: 25rpx;'>返回前请保存，防止丢失信息</text>
+    <textarea
+      type='text'
+      value='{{location}}'
+      placeholder='配送地址，务必准确'
+      data-key='location'
+      bindinput='onInput'
+    ></textarea>
+  </view>
+  <view class='name-editor'>
+    <text>收货人</text>
+    <input
+      type='text'
+      value='{{name}}'
+      placeholder='收货人姓名，务必准确'
+      data-key='name'
+      bindinput='onInput'
+    ></input>
+  </view>
+  <view class='phone-editor'>
+    <text>联系电话</text>
+    <input
+      type='number'
+      value='{{phone}}'
+      placeholder='电话号码，务必能与收货人联系'
+      data-key='phone'
+      bindinput='onInput'
+    ></input>
+  </view>
+  <view class='save'  bindtap='onSave'>
+    <button type='primary'>保存</button>
+  </view>
+</view>

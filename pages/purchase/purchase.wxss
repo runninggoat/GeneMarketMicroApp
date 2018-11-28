@@ -1,0 +1,92 @@
+/* pages/purchase/purchase.wxss */
+
+.body {
+  background: #EDEDED;
+  padding-top: 1rpx;
+}
+
+.address {
+  padding: 42rpx 0;
+  display: flex;
+  background-color: #FFFFFF;
+}
+
+.icon {
+  padding: 40rpx 30rpx 0 30rpx;
+}
+
+.icon > text {
+  font-size: 60rpx;
+}
+
+.name {
+  font-size: 45rpx;
+}
+
+.phone {
+  float: right;
+  font-size: 45rpx;
+}
+
+.location {
+  font-size: 30rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.arrow {
+  padding: 40rpx 30rpx 0 15rpx;
+}
+
+.title, .quantity {
+  margin-top: 20rpx;
+  padding: 42rpx;
+  background-color: #FFFFFF;
+}
+
+.title-content, .quantity-content {
+  float: right;
+}
+
+.quantity-content > .more {
+  margin-right: 20rpx;
+}
+
+.quantity-content > .less {
+  margin-left: 20rpx;
+}
+
+.purchase-bar {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 140rpx;
+  background-color: #FFFFFF;
+}
+
+.purchase-bar > .total-amount > text {
+  line-height:140rpx;
+  margin-left:30rpx;
+  font-size:50rpx;
+  font-weight:600;
+}
+
+.purchase-bar > .purchase-btn {
+  position: absolute;
+  right: 0;
+  height: 140rpx;
+  width:310rpx;
+  text-align:center;
+  background-color: #DE8100;
+}
+
+.purchase-bar > .purchase-btn > text {
+  line-height: 140rpx;
+  font-size: 40rpx;
+  color: #FFFFFF;
+}

@@ -28,8 +28,6 @@ Page({
       },
     ],
     active: '1',
-    windowHeight: 0,
-    windowWidth: 0,
 
     //”我的“页面的数据
     nickname: 'Tom',
@@ -55,14 +53,7 @@ Page({
   },
 
   onLoad: function () {
-    wx.getSystemInfo({
-      success: res => {
-        this.setData({
-          windowHeight: res.windowHeight,
-          windowWidth: res.windowWidth,
-        })
-      },
-    })
+    
   },
 
   /**

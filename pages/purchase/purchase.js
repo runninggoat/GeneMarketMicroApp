@@ -1,18 +1,18 @@
-// pages/product.js
+// pages/purchase/purchase.js
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    images: [
-      '../../images/1.jpg',
-      '../../images/2.jpg',
-      '../../images/3.jpg',
-      '../../images/4.jpg',
-    ],
     title: '',
     price: 0,
+    quantity: 1,
+    totalAmount: 0,
+    address: {},
+    windowHeight: 0,
   },
 
   /**
@@ -20,11 +20,12 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: options.title,
+      title: '产品购买',
     })
     this.setData({
       title: options.title,
       price: options.price,
+      totalAmount: this.data.quantity * options.price,
     })
   },
 
@@ -39,7 +40,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      address: app.globalData.address,
+      windowHeight: app.globalData.windowHeight,
+    })
   },
 
   /**
@@ -77,9 +81,13 @@ Page({
 
   },
 
-  onClickBuyBtn: function (e) {
-    wx.navigateTo({
-      url: `../purchase/purchase?title=${this.data.title}&price=${this.data.price}`,
+  changeQuantity: function (e) {
+    let delta = parseInt(e.currentTarget.dataset.delta)
+    let newQuantity = this.data.quantity + delta
+    if (newQuantity < 1) return
+    this.setData({
+      quantity: newQuantity,
+      totalAmount: newQuantity * this.data.price,
     })
   },
 })

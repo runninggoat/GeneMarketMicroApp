@@ -33,7 +33,7 @@
   <view class='price'>
     <text>￥{{price}}</text>
   </view>
-  <view class='buy-btn'>
+  <view class='buy-btn' bindtap='onClickBuyBtn'>
     <text>立即购买</text>
   </view>
 </view>

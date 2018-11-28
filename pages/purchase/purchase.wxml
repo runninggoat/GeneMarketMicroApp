@@ -1,0 +1,51 @@
+<!--pages/purchase/purchase.wxml-->
+
+<view class='body' style='height: {{windowHeight}}px'>
+  <view class='address'>
+    <view class='icon'>
+      <text class='iconfont icon-dizhi'></text>
+    </view>
+    <view class='info'>
+      <view>
+        <text class='name'>{{address.name}}</text>
+        <text class='phone'>{{address.phone}}</text>
+      </view>
+      <view>
+        <text class='location'>配送地址：{{address.location}}</text>
+      </view>
+    </view>
+    <view class='arrow'>
+      <text class='iconfont icon-xiayibu'></text>
+    </view>
+  </view>
+  <view class='title'>
+    <text>产品名称</text>
+    <text class='title-content'>{{title}}</text>
+  </view>
+  <view class='quantity'>
+    <text>购买数量</text>
+    <view class='quantity-content'>
+      <text
+        class='iconfont icon-tabshouqi more'
+        data-delta='1'
+        bindtap='changeQuantity'
+      ></text>
+      <text>{{quantity}}</text>
+      <text
+        class='iconfont icon-tabxiala less'
+        data-delta='-1'
+        bindtap='changeQuantity'
+      ></text>
+    </view>
+  </view>
+</view>
+
+<!--固定的定价购买信息-->
+<view class='purchase-bar'>
+  <view class='total-amount'>
+    <text>￥{{totalAmount}}</text>
+  </view>
+  <view class='purchase-btn' bindtap='onClickPurchaseBtn'>
+    <text>确认下单</text>
+  </view>
+</view>

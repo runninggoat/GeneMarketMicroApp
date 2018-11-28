@@ -1,4 +1,4 @@
-// pages/purchase/purchase.js
+// pages/addrmanager/addrmanager.js
 var app = getApp()
 
 Page({
@@ -7,11 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: '',
-    price: 0,
-    quantity: 1,
-    totalAmount: 0,
-    address: {},
+    addridx: 0,
+    addresses: [],
     windowHeight: 0,
   },
 
@@ -20,12 +17,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '产品购买',
-    })
-    this.setData({
-      title: options.title,
-      price: options.price,
-      totalAmount: this.data.quantity * options.price,
+      title: '管理地址',
     })
   },
 
@@ -41,7 +33,8 @@ Page({
    */
   onShow: function () {
     this.setData({
-      address: app.globalData.addresses[app.globalData.addridx],
+      addridx: app.globalData.addridx,
+      addresses: app.globalData.addresses,
       windowHeight: app.globalData.windowHeight,
     })
   },
@@ -81,19 +74,11 @@ Page({
 
   },
 
-  manageAddresses: function () {
-    wx.navigateTo({
-      url: '../addrmanager/addrmanager',
-    })
-  },
-
-  changeQuantity: function (e) {
-    let delta = parseInt(e.currentTarget.dataset.delta)
-    let newQuantity = this.data.quantity + delta
-    if (newQuantity < 1) return
+  selectAddr: function (e) {
+    let idx = e.currentTarget.dataset.idx
     this.setData({
-      quantity: newQuantity,
-      totalAmount: newQuantity * this.data.price,
+      addridx: idx,
     })
+    app.globalData.addridx = idx
   },
 })

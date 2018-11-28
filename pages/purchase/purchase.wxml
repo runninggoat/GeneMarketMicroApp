@@ -1,7 +1,7 @@
 <!--pages/purchase/purchase.wxml-->
 
 <view class='body' style='height: {{windowHeight}}px'>
-  <view class='address'>
+  <view class='address' bindtap='manageAddresses'>
     <view class='icon'>
       <text class='iconfont icon-dizhi'></text>
     </view>

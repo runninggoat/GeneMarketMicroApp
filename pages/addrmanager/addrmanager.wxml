@@ -1,0 +1,36 @@
+<!--pages/addrmanager/addrmanager.wxml-->
+<view class='body' style='height: {{windowHeight}}px'>
+  <block
+    wx:for='{{addresses}}'
+    wx:for-index='idx'
+    wx:for-item='address'
+    wx:key='{{idx}}'
+  >
+    <view
+      class='{{addridx === idx ? "address-highlight" : "address"}}'
+      data-idx='{{idx}}'
+      bindtap='selectAddr'
+    >
+      <view>
+        <text class='name'>{{addresses[idx].name}}</text>
+        <text class='phone'>{{addresses[idx].phone}}</text>
+      </view>
+      <view class='location'>配送地址：{{addresses[idx].location}}</view>
+      <view class='operations'>
+        <view class='operation edit'>
+          <text>编辑</text>
+        </view>
+        <view class='operation delete'>
+          <text>删除</text>
+        </view>
+      </view>
+      <block wx:if='{{addridx === idx}}'>
+        <text class='iconfont icon-radiobutton21 selected'></text>
+      </block>
+    </view>
+  </block>
+  <view class='add-addr'>
+    <text class='iconfont icon-zengjia icon'></text>
+    <text class='text'>添加地址</text>
+  </view>
+</view>

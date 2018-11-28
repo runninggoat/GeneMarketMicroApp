@@ -37,6 +37,13 @@ Page({
       addresses: app.globalData.addresses,
       windowHeight: app.globalData.windowHeight,
     })
+    if (app.globalData.addresses.length < 1) {
+      wx.showToast({
+        title: '请填写地址',
+        icon: 'none',
+        duration: 2000,
+      })
+    }
   },
 
   /**
@@ -81,4 +88,28 @@ Page({
     })
     app.globalData.addridx = idx
   },
+
+  deleteAddr: function (e) {
+    if (this.data.addresses.length < 2) {
+      wx.showToast({
+        title: '请至少保持一个地址',
+        icon: 'none',
+        duration: 2000,
+      })
+      return
+    }
+    let idx = e.currentTarget.dataset.idx
+    let newIdx = 0
+    if (idx > 1) {
+      newIdx = idx - 1
+    }
+    let newAddresses = Object.assign([], this.data.addresses)
+    newAddresses.splice(idx, 1)
+    this.setData({
+      addridx: newIdx,
+      addresses: newAddresses,
+    })
+    app.globalData.addridx = newIdx
+    app.globalData.addresses = newAddresses
+  }
 })

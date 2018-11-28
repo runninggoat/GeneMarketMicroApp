@@ -1,5 +1,10 @@
 <!--pages/addrmanager/addrmanager.wxml-->
 <view class='body' style='height: {{windowHeight}}px'>
+  <block wx:if='{{addresses.length === 0}}'>
+    <view style='text-align: center; margin: 0 0 30rpx 0;'>
+      <text style='font-size: 50rpx;'>空空如也😓</text>
+    </view>
+  </block>
   <block
     wx:for='{{addresses}}'
     wx:for-index='idx'
@@ -20,7 +25,7 @@
         <view class='operation edit'>
           <text>编辑</text>
         </view>
-        <view class='operation delete'>
+        <view class='operation delete' catchtap='deleteAddr'>
           <text>删除</text>
         </view>
       </view>

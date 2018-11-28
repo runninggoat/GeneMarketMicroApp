@@ -13,6 +13,7 @@ Page({
     totalAmount: 0,
     address: {},
     windowHeight: 0,
+    active: false,
   },
 
   /**
@@ -41,9 +42,18 @@ Page({
    */
   onShow: function () {
     this.setData({
-      address: app.globalData.addresses[app.globalData.addridx],
       windowHeight: app.globalData.windowHeight,
     })
+    if (app.globalData.addresses.length === 0) {
+      wx.navigateTo({
+        url: '../addrmanager/addrmanager',
+      })
+    } else {
+      this.setData({
+        address: app.globalData.addresses[app.globalData.addridx],
+        active: true,
+      })
+    }
   },
 
   /**
@@ -82,6 +92,7 @@ Page({
   },
 
   manageAddresses: function () {
+    if (!this.data.active) return
     wx.navigateTo({
       url: '../addrmanager/addrmanager',
     })

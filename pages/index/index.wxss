@@ -52,14 +52,16 @@
   background-color: #FFFFFF;
 }
 
+.tab1, .tab2 {
+  margin: 15rpx 0 0 0;
+  text-align: center;
+  width: 50%;
+}
+
 .tab1 {
   float: left;
-  margin: 15rpx 0 0 180rpx;
-  text-align: center;
 }
 
 .tab2 {
   float: right;
-  margin: 15rpx 180rpx 0 0;
-  text-align: center;
 }

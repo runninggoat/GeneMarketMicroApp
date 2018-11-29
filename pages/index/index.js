@@ -58,6 +58,13 @@ Page({
     
   },
 
+  /**
+   * 生命周期函数--到达页面底部触发
+   */
+  onReachBottom: function () {
+    
+  },
+
   onClickItem: function (e) {
     let product = e.currentTarget.dataset.product
     wx.navigateTo({
@@ -74,5 +81,5 @@ Page({
         active: activeTab,
       })
     }
-  }
+  },
 })

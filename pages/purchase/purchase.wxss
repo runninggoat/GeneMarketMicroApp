@@ -19,6 +19,10 @@
   font-size: 60rpx;
 }
 
+.info {
+  width: 100%;
+}
+
 .name {
   font-size: 45rpx;
 }

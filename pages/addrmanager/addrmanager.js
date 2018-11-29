@@ -50,14 +50,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.saveAddressInfo()
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    this.saveAddressInfo()
   },
 
   /**
@@ -126,4 +126,16 @@ Page({
       })
     }
   },
+
+  saveAddressInfo: function () {
+    //保存地址信息到缓存中
+    wx.setStorage({
+      key: 'addresses',
+      data: app.globalData.addresses,
+    })
+    wx.setStorage({
+      key: 'addridx',
+      data: app.globalData.addridx,
+    })
+  }
 })

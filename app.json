@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/profile/profile",
+    "pages/order/order",
     "pages/product/product",
     "pages/purchase/purchase",
     "pages/addrmanager/addrmanager",

@@ -1,0 +1,58 @@
+/* pages/order/order.wxss */
+
+.body {
+  padding: 30rpx;
+  background: #ededed;
+}
+
+.order {
+  position: relative;
+  padding: 30rpx 0 0 0;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 10rpx 1rpx;
+}
+
+.header {
+  padding: 0 30rpx 20rpx 30rpx;
+  border-bottom: 1rpx solid #232323;
+}
+
+.title {
+  font-size: 45rpx;
+}
+
+.status {
+  float: right;
+  color: #fff;
+  padding: 10rpx;
+}
+
+.success {
+  background-color: #4FAC2A;
+}
+
+.pending {
+  background-color: #DD8236;
+}
+
+.fail {
+  background-color: #E5423F;
+}
+
+.content {
+  padding: 20rpx;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #232323;
+}
+
+.footer {
+  display: flex;
+}
+
+.operation {
+  width: 50%;
+  padding: 20rpx;
+  text-align: center;
+}

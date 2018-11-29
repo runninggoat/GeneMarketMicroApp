@@ -1,0 +1,55 @@
+<!--pages/order/order.wxml-->
+<view class='body' style='height: {{orders.length > 2 ? "" : windowHeight + "px"}}'>
+  <block
+    wx:for='{{orders}}'
+    wx:for-index='idx'
+    wx:for-item='item'
+    wx:key='{{item.orderid}}'
+  >
+    <view class='order'>
+      <view class='header'>
+        <text class='title'>{{item.title}}</text>
+        <block wx:if='{{item.status === "success"}}'>
+          <text class='status success'>成功</text>
+        </block>
+        <block wx:elif='{{item.status === "pending"}}'>
+          <text class='status pending'>待付款</text>
+        </block>
+        <block wx:elif='{{item.status === "fail"}}'>
+          <text class='status fail'>失败</text>
+        </block>
+      </view>
+      <view class='content'>
+        <view>
+          <text class='name'>收货人：{{item.name}}</text>
+        </view>
+        <view>
+          <text class='phone'>联系电话：{{item.phone}}</text>
+        </view>
+        <view>
+          <text class='location'>收货地址：{{item.location}}</text>
+        </view>
+        <view>
+          <text class='orderid'>订单编号：{{item.orderid}}</text>
+        </view>
+        <view>
+          <text class='timestamp'>时间戳：{{item.timestamp}}</text>
+        </view>
+      </view>
+      <view class='footer'>
+        <block wx:if='{{item.status === "success"}}'>
+          <view class='operation' style='border-right: 1rpx solid #232323;'>查看物流</view>
+          <view class='operation'>申请退款</view>
+        </block>
+        <block wx:elif='{{item.status === "pending"}}'>
+          <view class='operation' style='border-right: 1rpx solid #232323;'>完成付款</view>
+          <view class='operation'>取消订单</view>
+        </block>
+        <block wx:elif='{{item.status === "fail"}}'>
+          <view class='operation' style='border-right: 1rpx solid #232323;'>重新购买</view>
+          <view class='operation'>删除订单</view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,71 @@
+<!--pages/profile/profile.wxml-->
+<view class='body' style='height: {{windowHeight}}px'>
+  <!--资料编辑-->
+  <block wx:if='{{editing}}'>
+    <block
+      wx:for='{{profile}}'
+      wx:for-index='idx'
+      wx:for-item='item'
+      wx:key='{{idx}}'
+    >
+      <view class='item'>
+        <text class='key'>{{item.title}}</text>
+        <view class='edit-value'>
+          <block wx:if='{{item.key === "address"}}'>
+            <textarea
+              type='text'
+              value='{{item.value}}'
+              placeholder='{{item.placeholder}}'
+              class='input'
+              data-idx='{{idx}}'
+              bindblur='onInput'
+            ></textarea>
+          </block>
+          <block wx:elif='{{item.key === "phone" || item.key === "age" || item.key === "weight" || item.key === "tall"}}'>
+            <input
+              type='number'
+              value='{{item.value}}'
+              placeholder='{{item.placeholder}}'
+              class='input'
+              data-idx='{{idx}}'
+              bindblur='onInput'
+            ></input>
+          </block>
+          <block wx:else>
+            <input
+              type='text'
+              value='{{item.value}}'
+              placeholder='{{item.placeholder}}'
+              class='input'
+              data-idx='{{idx}}'
+              bindblur='onInput'
+            ></input>
+          </block>
+        </view>
+        <view style='clear: both;'></view>
+      </view>
+    </block>
+    <view class='operation'>
+      <button type='primary' bindtap='saveAndDisableEditing'>保存资料</button>
+    </view>
+  </block>
+
+  <!--资料展示-->
+  <block wx:else>
+    <block
+      wx:for='{{profile}}'
+      wx:for-index='idx'
+      wx:for-item='item'
+      wx:key='idx'
+    >
+      <view class='item'>
+        <text class='key'>{{item.title}}</text>
+        <text class='value'>{{item.value}}</text>
+        <view style='clear: both;'></view>
+      </view>
+    </block>
+    <view class='operation'>
+      <button type='primary' bindtap='enableEditing'>修改资料</button>
+    </view>
+  </block>
+</view>

@@ -42,7 +42,11 @@
       wx:for-item='feature'
       wx:key='{{feature.text}}'
     >
-      <view class='feature'>
+      <view
+        class='feature'
+        data-page='{{feature.page}}'
+        bindtap='navigateFeature'
+      >
         <text class='iconfont {{feature.icon}}'></text>
         <text class='text'>{{feature.text}}</text>
         <text

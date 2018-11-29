@@ -1,0 +1,44 @@
+/* pages/profile/profile.wxss */
+
+.body {
+  height: 100%;
+  padding-top: 1rpx;
+  background-color: #ededed;
+}
+
+.item {
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  background: #fff;
+}
+
+.key {
+  float: left;
+}
+
+.value, .edit-value {
+  float: right;
+}
+
+.value {
+  width: 560rpx;
+  text-align: right;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+.operation {
+  padding: 0 20rpx;
+}
+
+.input {
+  border: 1rpx solid #232323;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  width: 560rpx;
+}

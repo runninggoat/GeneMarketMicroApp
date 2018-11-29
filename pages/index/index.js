@@ -31,18 +31,22 @@ Page({
       {
         text: '会员资料',
         icon: 'icon-fuzhi',
+        page: 'profile',
       },
       {
         text: '我的订单',
         icon: 'icon-dizhi',
+        page: 'order',
       },
       {
         text: '我的报告',
         icon: 'icon-fuzhi',
+        page: 'report',
       },
       {
         text: '我的样品',
         icon: 'icon-qian',
+        page: 'sample',
       },
     ],
   },
@@ -72,7 +76,9 @@ Page({
     })
   },
 
-  /** 切换tab */
+  /**
+   * 切换tab
+   */
   onClickTab: function (e) {
     let activeTab = e.currentTarget.dataset.tab
     if (activeTab !== this.data.active) {
@@ -81,5 +87,12 @@ Page({
         active: activeTab,
       })
     }
+  },
+
+  navigateFeature: function (e) {
+    let page = e.currentTarget.dataset.page
+    wx.navigateTo({
+      url: `../${page}/${page}`,
+    })
   },
 })
